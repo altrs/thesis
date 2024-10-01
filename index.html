@@ -2,13 +2,139 @@
 <html lang="en">
 <head>
   <title>Interactive Prototype</title>
+
+  <style>
+
+    body{
+      margin: 0px;
+    }
+    
+    .top-nav{
+      position: fixed;
+      display: flex;
+      width: 100vw;
+      text-align: center;
+      justify-content: space-between;
+    }
+
+    .top-nav button{
+      padding: 15px;
+      width: 100%;
+      background-color: transparent;
+      border: 1px solid;
+    }
+
+    .bottom-nav{
+      position: fixed;
+      display: flex;
+      bottom: 0px;
+      width: 100vw;
+      text-align: center;
+      justify-content: center;
+      border: 1px solid;
+      height: 20px;
+    }
+
+    .gallery {
+      --s: 150px;
+      --g: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(var(--s), 1fr));
+      gap: var(--g);
+      margin: 50px 0;
+      transform: translateY(150%);
+    }
+
+    .gallery > img {
+      grid-area: 1/1;
+      width: var(--s);
+      aspect-ratio: 1.15;
+      object-fit: cover;
+      transform: translate(var(--_x,0),var(--_y,0)) scale(var(--_t,1));
+      cursor: pointer;
+      transition: .2s linear;
+    }
+
+    .gallery > img:hover {
+      z-index: 1;
+      --_t: 1.2;
+    }
+
+    .gallery > img:nth-child(1) {--_y: calc(-100% - var(--g))}
+    .gallery > img:nth-child(7) {--_y: calc( 100% + var(--g))}
+    .gallery > img:nth-child(3),
+    .gallery > img:nth-child(5) {--_x: calc(-75% - .87*var(--g))}
+    .gallery > img:nth-child(4),
+    .gallery > img:nth-child(6) {--_x: calc( 75% + .87*var(--g))}
+    .gallery > img:nth-child(3),
+    .gallery > img:nth-child(4) {--_y: calc(-50% - .5*var(--g))}
+    .gallery > img:nth-child(5), 
+    .gallery > img:nth-child(6) {--_y: calc( 50% + .5*var(--g))}
+
+    .content-nav-1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .content-nav-2 {
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+      box-sizing: border-box;
+      height: 200px;
+      padding: 20px;
+    }
+
+    .content-nav-2 div {
+      flex: 1;
+      text-align: center;
+      border: 1px solid;
+      box-sizing: border-box;
+    }
+
+    .intro{
+      height: 100vh;
+      width: 100vw;
+      border: 1px solid;
+    }
+
+  </style>
+
 </head>
 <body>
 
   <nav class="top-nav">
-
+    <button>Table of Contents</button>
+    <button>About</button>
+    <button>Interactives Site Map</button>
   </nav>
 
+  <div class="content-nav-1">
+    <div class="gallery">
+      <img src="assets/content-nav/flower.jpg">
+      <img src="assets/content-nav/flower.jpg">
+      <img src="assets/content-nav/flower.jpg">
+      <img src="assets/content-nav/flower.jpg">
+      <img src="assets/content-nav/flower.jpg">
+      <img src="assets/content-nav/flower.jpg">
+    </div>
+
+    <div class="content-nav-2">
+      <div><p>How unshaming/shame-ifying can help make an environment more positive</p></div>
+      <div><p>Discuss shame-less environments, benefits, what it is + what it's not</p></div>
+      <div><p>Technology and personal expression</p></div>
+      <div><p>Why the digital environment can (and does) affect the physical world.</p></div>
+      <div><p>Credits</p></div>
+    </div>
+  </div>
+
+  <div class="intro">
+    
+  </div>
 
   <nav class="bottom-nav">
     <a> TOOLS OF AGENCY </a>
