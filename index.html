@@ -65,6 +65,7 @@
     }
 
     .gallery > img:nth-child(1) {--_y: calc(70% + var(--g));}
+    .gallery > img:nth-child(7) {--_y: calc(-110% + var(--g))}
     .gallery > img:nth-child(3),
     .gallery > img:nth-child(5) {--_x: calc(-75% - .87*var(--g))}
     .gallery > img:nth-child(4),
@@ -230,7 +231,7 @@
 <body>
 
   <nav class="top-nav">
-    <button class="clickable">^ Table of Contents ^</button>
+    <button class="clickable" id="toc">^ Table of Contents ^</button>
     <button class="clickable">- About -</button>
     <button class="clickable">+ Interactives Directory +</button>
   </nav>
@@ -238,19 +239,20 @@
   <div class="content-nav-1">
     <div class="gallery">
       <img src="assets/content-nav/flower.jpg" data-slide="0">
-      <img src="assets/content-nav/flower.jpg">
+      <img id="center" src="assets/content-nav/flower.jpg">
       <img src="assets/content-nav/flower.jpg" data-slide="1">
       <img src="assets/content-nav/flower.jpg" data-slide="2">
       <img src="assets/content-nav/flower.jpg" data-slide="3">
       <img src="assets/content-nav/flower.jpg" data-slide="4">
+      <img id="title" src="assets/content-nav/title.png">
     </div>
 
     <div class="content-nav-2">
-      <div class="clickable"><p>How unshaming/shame-ifying can help make an environment more positive</p></div>
-      <div class="clickable"><p>Discuss shame-less environments, benefits, what it is + what it's not</p></div>
-      <div class="clickable"><p>Technology and personal expression</p></div>
-      <div class="clickable"><p>Why the digital environment can (and does) affect the physical world.</p></div>
-      <div class="clickable"><p>Credits</p></div>
+      <div class="clickable" id="b1"><p>How unshaming/shame-ifying can help make an environment more positive</p></div>
+      <div class="clickable" id="b2"><p>Discuss shame-less environments, benefits, what it is + what it's not</p></div>
+      <div class="clickable" id="b3"><p>Technology and personal expression</p></div>
+      <div class="clickable" id="b4"><p>Why the digital environment can (and does) affect the physical world.</p></div>
+      <div class="clickable" id="b5"><p>Credits</p></div>
     </div>
   </div>
 
@@ -294,6 +296,56 @@
     </div>
   </div>
 
+  <div class="positive-environments text-div">
+    <p class="text">
+      <br><br>III. Positive Environments<br><br>
+      Summarize what it means to make environments more positive, and how unshaming/shame-ifying it can help.<br><br>
+      A valid question one could ask is, ‘why does it matter if a robot has stage fright?’ and ‘what does that have to do with me?’ As Brian Christian, science fiction writer and winner of Loebner’s ‘Most Human Human Award’ puts it, “the march of technology isn't just changing how we live, it's raising new questions about what it means to be human.” Whilst innovative tech companies strive to have their name headline media outlets due to their most human-like robot, most realistic virtual environment, most accurate reality simulation, most intelligent artificial intelligence etc., it is as if each new step towards ‘hi’-technologies end up producing something that ultimately just further reveals what actual intelligence, realism, humanism, etc. is not.
+    </p>
+  </div>
+
+  <div class="shameless-environments text-div">
+    <p class="text">
+      <br><br>IV. Positive Environments<br><br>
+      Discuss shame-less environments, its benefits, what it is, and what it not is.<br><br>
+      An integral aspect of technology is its ability to document information, to store words, pictures, videos, and more. Digital storage capabilities revolutionized communication and systems of information, allowing for greater information accessibility and preservation. As stated within the article ‘Technologies of Memory,’ “ Embedded within much technological discourse is a Utopian, techno-centric belief in an infallible memory-machine, in contrast to a notionally capricious, context-dependent and therefore fallible human memory.” Thus, technology’s superior capacity for information storage is undeniable, so much so that humans increasingly rely on digital memory as an extension of their own. While a large aspect of digital storage is its superior capabilities that far exceed that of its human creators, the way in which these technologies are developed take major influence from human behavior and cognition. For example, the term ‘contextual computing’ refers to, “[using] time, location and personal rhythm, task or activity, along with models of human memory practices, to help people manage their everyday lives via information storage and/or reminder.”
+    </p>
+  </div>
+
+  <div class="tech-personalhood text-div">
+    <p class="text">
+      <br><br>V. Technology and personal expression<br><br>
+      Technology and personal expression.<br><br>
+      Taking a closer look at this relationship between humans and machines, one can start to see how our technological memory can in some cases be detrimental. One fascinating example of developed co-dependence between humans and machines is the overreliance on GPS devices.<br><br>
+      At first appearances, the increasing usage of these wayfinding technologies is freeing us from the burden of a tedious cognitive task (“where am I?” “How do I get to where I want to go?”). [...] [However] The very tools for navigability that are offered to us implicitly limit our ability to make choices by shaping the very way in which we navigate in our environments, potentially making some choices imperceptible. [...] ongoing usage of these devices make them more and more heavily entrenched in our decision-making processes.<br><br>
+      While this example leans cynical when confronting how we might come to view advancing technologies, it’s greatly important to distinguish what will come to be viewed as a detrimental or non-detrimental effect on technology users. Especially given that with every gain that comes from innovation, loss occurs as well. Something to keep at the forefront of our minds is that, “growth has become this unmarked category granted magical powers. As growth remains
+      </p>
+  </div>
+
+  <div class="physical-digital text-div">
+    <p class="text">
+      <br><br>VI. The Physical and Digital Environments<br><br>
+      Discuss the ultimate connection of the digital to the physical, and why starting in the digital environment can (and does) affect the physical world.<br><br>
+      One does not have to look far to see the ways in which social bots (including chatbots, virtual assistants, humanoids, etc.) mimic the behaviors and mannerisms of humans. ChatGPT has come to be notorious for its proficiency in natural language processing. Virtual assistants such as Siri, Alexa and Bixby are a casual ‘Hey [insert robot’s name]’ call away on any mobile device. Various humanoid robots are being developed, including Hanson Robotic’s Sofia, the first citizen robot; Boston Dynamics’ ATLAS, mainly being developed for search and rescue missions; and Nadine, a social robot who worked as a customer service agent, among many others in development today. All of these robots have varying degrees of ability and speciality skills, including speaking many different languages, emotion recognition, memory recall, and even backflips in ATLAS’s case. 
+      </p>
+  </div>
+
+   <div class="credits text-div">
+    <p class="text">
+      <br><br>VII. CREDITS<br><br>
+      ✸ Livingston, Julie. Self-Devouring Growth : A Planetary Parable As Told from Southern Africa. Durham: Duke University Press, 2019. Accessed May 13, 2024. ProQuest Ebook Central. “Self Devouring Growth” is a book that critically explores technological advancements and its effects, both positive and negative. Livingston overall argues that an imbalanced global pursuit of economic and technological growth has and will continue to lead to ecological, and societal destruction. This book is relevant to my project as I want to demonstrate through my project various downfalls of utilizing technology in certain contexts, arguing that tech advancements should be examined on a deeper level.<br><br>
+
+      ✸ Redmiles, E.M. (2022). The Need for Respectful Technologies: Going Beyond Privacy. In: Werthner, H., Prem, E., Lee, E.A., Ghezzi, C. (eds) Perspectives on Digital Humanism. Springer, Cham. https://doi.org/10.1007/978-3-030-86144-5_42 The book, “Perspectives On Digital Humanism” is a collection of essays where the connection between humans and technology are examined, focusing on the potential for information technologies, while also considering privacy violations, ethical concern and other nuanced topics. This book will be highly relevant to my project as, specifically the chapter, “The Need for Respectful Technologies,” will help me understand the concepts of data privacy in conjunction with the well being of individuals, promoted through emerging technologies. The author puts emphasis on the importance of contextual costs of well being technologies.<br><br>
+
+      ✸ Uebel, M. (2021). Technologies of Shame: Agency, Identity, and Visibility. In: Mayer, https://link.springer.com/book/10.1007/978-3-030-59527-2 The book, “Shame 4.0: Investigating an Emotion in Digital Worlds and the Fourth Industrial Revolution” explores future life for individuals and the cognitive effects of technology when considering humans. A main aspect of this piece of literature is that they discuss transforming negative emotions in increasingly technologised cultures. This is specifically related to my project as an aspect of my proposed solution is likely regarding how we might take the current state of shame within technology and disassemble it further to become a positive aspect of everyday life.<br><br>
+
+      ✸ Babushkina, Dina. "What does it mean for a robot to be respectful?." Techné: Research in Philosophy and Technology (2022). https://www.pdcnet.org/8525763B0050E6F8.pdf Babushkina’s article is an academic article regarding research in philosophy and technology. The article is an argumentative essay about how robots have the ability to be respectful. The main argument is as follows: robot respectfulness is governed by distinct principles that reflect the maker’s attitude towards respect, and further that respect is the values that make an individual a person. The specific part relevant to my project is the author’s argument that the makers and creators of a technology should be scrutinized (i.e. their values and morals) and how or how not those values seep into their created robots. This text is integral to my project as it explores the relationship between technology and creator, rather than just viewing the entities in separate light.<br><br>
+
+      ✸ Henry, N., & Powell, A. (2015). Embodied Harms: Gender, Shame, and Technology-Facilitated Sexual Violence. Violence Against Women, 21(6), 758-779. https://doi.org/10.1177/1077801215576581 This piece of literature is a research article that delves into the topic of technology and sexual violence. The aim of the article is to explore the various ways in which gender hierarchies and inequalities manifest online. The main argument is that the problematic dualism of cyberspace versus physical space reduces and abstracts the issue of ‘embodied harms.’ The article goes over gender, space and technology as well as the real harms of digital abuse and what that means for things such as the resentment of the body. This argument is relevant to my project because it thoroughly encapsulates the relations between shame embedded and encouraged through technology. It adds to my project as it uncovers the unseen ways in which technology (generally associated with hubris) in actuality permeates negative humility.
+      </p>
+  </div>
+
+
   <nav class="bottom-nav">
     <a class="clickable"> TOOLS OF AGENCY </a>
   </nav>
@@ -317,12 +369,15 @@
     }
 
     // Add click event listener to each gallery image
-    galleryImages.forEach((image) => {
-      image.addEventListener('click', () => {
-        const slideIndex = parseInt(image.getAttribute('data-slide'));
-        examplesSection.scrollIntoView({ behavior: 'smooth' });
-        showSlide(slideIndex);
-      });
+    galleryImages.forEach((image, index) => {
+      // Skip the second (index 1) and seventh (index 6) images
+      if (index !== 1 && index !== 6) {
+        image.addEventListener('click', () => {
+          const slideIndex = parseInt(image.getAttribute('data-slide'));
+          examplesSection.scrollIntoView({ behavior: 'smooth' });
+          showSlide(slideIndex);
+        });
+      }
     });
 
     // Add click event listeners to all buttons for manual navigation
@@ -333,7 +388,39 @@
       });
     });
 
+
     showSlide(0);
+
+    //other navigations
+    const b1 = document.getElementById("b1");
+    const b2 = document.getElementById("b2");
+    const b3 = document.getElementById("b3");
+    const b4 = document.getElementById("b4");
+    const b5 = document.getElementById("b5");
+
+    const positiveenvironments = document.querySelector('.positive-environments');
+    const shamelessenvironments = document.querySelector('.shameless-environments');
+    const techpersonalhood = document.querySelector('.tech-personalhood');
+    const physicaldigital = document.querySelector('.physical-digital');
+    const credits = document.querySelector('.credits');
+
+    b1.addEventListener('click', () => {positiveenvironments.scrollIntoView({ behavior: 'smooth' });});
+    b2.addEventListener('click', () => {shamelessenvironments.scrollIntoView({ behavior: 'smooth' });});
+    b3.addEventListener('click', () => {techpersonalhood.scrollIntoView({ behavior: 'smooth' });});
+    b4.addEventListener('click', () => {physicaldigital.scrollIntoView({ behavior: 'smooth' });});
+    b5.addEventListener('click', () => {credits.scrollIntoView({ behavior: 'smooth' });});
+
+    const toc = document.getElementById("toc");
+    const contentnav1 = document.querySelector('.content-nav-1');
+    toc.addEventListener('click', () => {contentnav1.scrollIntoView({ behavior: 'smooth' });});
+
+    const center = document.getElementById("center");
+    const intro = document.querySelector('.intro');
+    center.addEventListener('click', () => {intro.scrollIntoView({ behavior: 'smooth' });});
+    
+    // const title = document.getElementById("title");
+    // const contentnav1 = document.querySelector('.de');
+    // toc.addEventListener('click', () => {contentnav1.scrollIntoView({ behavior: 'smooth' });});
 
 
   </script>
