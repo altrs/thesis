@@ -15,34 +15,38 @@
       width: 100vw;
       text-align: center;
       justify-content: space-between;
+      z-index: 1000;
     }
 
     .top-nav button{
       padding: 15px;
       width: 100%;
-      background-color: transparent;
+      background-color: white;
       border: 1px solid;
     }
 
     .bottom-nav{
       position: fixed;
       display: flex;
-      bottom: 0px;
+      justify-content: center;
+      align-items: center;
+      bottom: 0;
       width: 100vw;
       text-align: center;
-      justify-content: center;
       border: 1px solid;
-      height: 20px;
+      height: 50px;
+      background-color: white;
+      z-index: 1000;
     }
 
     .gallery {
       --s: 150px;
-      --g: 20px;
+      --g: 30px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(var(--s), 1fr));
       gap: var(--g);
       margin: 50px 0;
-      transform: translateY(150%);
+      transform: translateY(100%);
     }
 
     .gallery > img {
@@ -60,8 +64,7 @@
       --_t: 1.2;
     }
 
-    .gallery > img:nth-child(1) {--_y: calc(-100% - var(--g))}
-    .gallery > img:nth-child(7) {--_y: calc( 100% + var(--g))}
+    .gallery > img:nth-child(1) {--_y: calc(70% + var(--g));}
     .gallery > img:nth-child(3),
     .gallery > img:nth-child(5) {--_x: calc(-75% - .87*var(--g))}
     .gallery > img:nth-child(4),
@@ -69,7 +72,7 @@
     .gallery > img:nth-child(3),
     .gallery > img:nth-child(4) {--_y: calc(-50% - .5*var(--g))}
     .gallery > img:nth-child(5), 
-    .gallery > img:nth-child(6) {--_y: calc( 50% + .5*var(--g))}
+    .gallery > img:nth-child(6) {--_y: calc( 20% + .5*var(--g))}
 
     .content-nav-1 {
       display: flex;
@@ -83,10 +86,9 @@
     .content-nav-2 {
       display: flex;
       justify-content: space-between;
-      width: 100vw;
+      max-width: 100vw;
       box-sizing: border-box;
-      height: 200px;
-      padding: 20px;
+      height: 250px;
     }
 
     .content-nav-2 div {
@@ -94,12 +96,132 @@
       text-align: center;
       border: 1px solid;
       box-sizing: border-box;
+      background-size: cover;
+    }
+
+    .content-nav-2 div {
+      padding: 70px 20px 20px 20px;
+    }
+
+    .content-nav-2 div:nth-child(1) {
+      background-image: url("assets/content-nav/1.png");
+    }
+    .content-nav-2 div:nth-child(2) {
+      background-image: url("assets/content-nav/2.jpg");
+    }
+    .content-nav-2 div:nth-child(3) {
+      background-image: url("assets/content-nav/3.jpg");
+    }
+    .content-nav-2 div:nth-child(4) {
+      background-image: url("assets/content-nav/4.jpg");
+    }
+    .content-nav-2 div:nth-child(5) {
+      background-image: url("assets/content-nav/5.jpg");
     }
 
     .intro{
-      height: 100vh;
       width: 100vw;
       border: 1px solid;
+    }
+
+    .defining-shame{
+      width: 100vw;
+      border: 1px solid;
+    }
+
+    .examples{
+      width: 100vw;
+      border: 1px solid;
+    }
+
+    .clickable{
+      cursor: crosshair;
+    }
+
+    .clickable:hover{
+      background-color: yellow;
+      font-style: italic;
+      color: blue;
+    }
+
+    .text-div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: justify;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .text{
+      max-width: 800px;
+      font-size: 20px;
+    }
+
+    /*  CAROUSEL  */
+
+    .examples {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: justify;
+      box-sizing: border-box;
+    }
+
+    .examples-carousel {
+      width: 700px;
+      height: 500px;
+      border: 1px solid;
+    }
+
+    .examples-carousel {
+      width: 700px;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid;
+    }
+
+    .carousel-slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 100%; /* Initially, move all slides off-screen */
+      opacity: 0;
+      transition: all 0.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      background: #f5f5f5; /* For visibility */
+    }
+
+    .carousel-slide.active {
+      left: 0; /* Bring the active slide into view */
+      opacity: 1;
+    }
+
+    .carousel-buttons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .carousel-btn {
+      padding: 10px 20px;
+      border: 1px solid #333;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .carousel-btn:hover {
+      background-color: #ddd;
     }
 
   </style>
@@ -108,37 +230,113 @@
 <body>
 
   <nav class="top-nav">
-    <button>Table of Contents</button>
-    <button>About</button>
-    <button>Interactives Site Map</button>
+    <button class="clickable">^ Table of Contents ^</button>
+    <button class="clickable">- About -</button>
+    <button class="clickable">+ Interactives Directory +</button>
   </nav>
 
   <div class="content-nav-1">
     <div class="gallery">
+      <img src="assets/content-nav/flower.jpg" data-slide="0">
       <img src="assets/content-nav/flower.jpg">
-      <img src="assets/content-nav/flower.jpg">
-      <img src="assets/content-nav/flower.jpg">
-      <img src="assets/content-nav/flower.jpg">
-      <img src="assets/content-nav/flower.jpg">
-      <img src="assets/content-nav/flower.jpg">
+      <img src="assets/content-nav/flower.jpg" data-slide="1">
+      <img src="assets/content-nav/flower.jpg" data-slide="2">
+      <img src="assets/content-nav/flower.jpg" data-slide="3">
+      <img src="assets/content-nav/flower.jpg" data-slide="4">
     </div>
 
     <div class="content-nav-2">
-      <div><p>How unshaming/shame-ifying can help make an environment more positive</p></div>
-      <div><p>Discuss shame-less environments, benefits, what it is + what it's not</p></div>
-      <div><p>Technology and personal expression</p></div>
-      <div><p>Why the digital environment can (and does) affect the physical world.</p></div>
-      <div><p>Credits</p></div>
+      <div class="clickable"><p>How unshaming/shame-ifying can help make an environment more positive</p></div>
+      <div class="clickable"><p>Discuss shame-less environments, benefits, what it is + what it's not</p></div>
+      <div class="clickable"><p>Technology and personal expression</p></div>
+      <div class="clickable"><p>Why the digital environment can (and does) affect the physical world.</p></div>
+      <div class="clickable"><p>Credits</p></div>
     </div>
   </div>
 
-  <div class="intro">
+  <div class="intro text-div">
+    <p class="text">
+      <br><br>I. Robots Have Stage Fright? <br><br>
+      A robotic duck sits perched on a wooden stool, occasionally squawking off-key into a microphone. The only movement its mechanical body can do is coyly jerk its beak towards and away from the microphone. A robot accordian player is situated next to the duck, a few human fingers can be seen holding the accordion and pressing down on some of the treble keys. Big rubber boots support the machine’s base, but otherwise no other biological body parts can be seen – as if the creature has compressed itself and is hiding from its own incoherent tune. The drum hides halfway up the wall, and the pianist has only one hand teetering over keys of their keyboard, their arm extending from somewhere behind the curtain. Off stage, a disembodied leg writhes on the ground, moving as if it’s trying to escape the performance. On the other side of the room, a disembodied hand soothes itself by slowly moving its fingers in the corner. <br><br>
+      This sorry-sight of a musical band is Tobias Bradford’s artistic take on anthropomorphizing machines. Imposing animal behaviors and mannerisms on autonomous objects is the main medium for Bradford. In an interview regarding his piece Stage Fright, the artist states, “it is quite a primal thing to [...] project human qualities onto objects, especially the ones that specifically sort of invite that interpretation through various means– either that they are anthropomorphic in nature physically or that they act in anthropomorphic ways– as in like something seeming chaotic or unexpected or you know, sentient” Stage Fright is undoubtedly a striking work of art; However, while Bradford’s distinguished creation stands out for tackling the topic of anthropomorphism in such eerie, unsettling, and contemplative ways, I argue that the motif of machines exhibiting human-like behavior is anything but unique in the age of the Fourth Industrial Revolution. <br><br>
+      As Bradford contemplates this idea of machines either being anthropomorphic in nature or just acting in anthropomorphic ways, his piece can lead viewers to apply this question to their everyday technologies. Are we imposing persona on machines as we perceive them, or are animal behaviors deliberately/indeliberately infused within technologically innovative objects by the creators? How may seeing animal/humanistic mannerism and behavior within our technology impact the way in which we interact with those machines, and how in turn may that affect us?<br><br>
+      To continue this train of thought, Stage Fright specifically tackles mannerisms relating to shame, humiliation, and embarrassment. These are all characteristics not commonly related to machinery or automation, as Bradford himself regards his robot creations as, “quite unimpressive or even disappointing” in contrast to common descriptors used for robots including, ‘efficient’, ‘precise’, or ‘advanced’.
+    </p>
+  </div>
+
+  <div class="defining-shame text-div">
+    <p class="text">
+      <br><br>II. Defining Shame <br><br>
+      The American Psychological Association defines shame as “a highly unpleasant self-conscious emotion arising from the sense of there being something dishonorable, immodest, or indecorous in one's own conduct or circumstances.” As most readers can likely agree from personal experience, this definition of shame rings true. However, diving deeper into how shame often manifests itself, one can view shame as a matter of visibility and agency. Framing shame in these specific terms can further help us better relate shame to technology: <br><br>
+      Visibility and invisibility at the center of technology, brings before us the signiﬁcance of exposure and privacy in any consideration of shame. New and expanding forms of connectivity [within technology] mean that discussions of urgent issues such as how our psyches are modiﬁed by the increasing loss of control over our personal data in the so-called Age of Surveillance Capitalism (Zuboff, 2019) may be usefully informed by reﬂection upon shame as an indelible marker of human affectivity.”<br><br>
+      With this in mind, one can begin to see the inextricable ties that technology has to shame, specifically technology that documents our lives, that we use to express ourselves, etc.Going a step further, public shame is also another concept this essay delves into. Public shaming’s function is of course founded on the definitions explored above. Public shaming should be especially noted as it has uses for productive community development, but has many caveats -- specifically in regards to public shaming on social media. Public shaming is also often spoken about in terms of ‘status’: “At a most basic level, public shaming involves public expressions of moral disapproval of some wrongdoer that marks that wrongdoer as having a defective status.”<br><br>
+      While shame holds negative connotations, shame has undeniable functionality within society.  The APA states, “shame is [...] theorized to play a more positive adaptive function by regulating experiences of excessive and inappropriate interest and excitement and by diffusing potentially threatening social behavior” With this in mind, one other concept of shame that should be noted is the difference between reintegrative versus disintegrative shaming as established by criminologist John Braithwaite. To summarize Braithwaite’s concept, “While reintegrative shaming focuses on promoting cooperative behavior in individuals for the sake of the community, disintegrative shaming focuses on protecting a community from particularly deviant individuals.” Reintegrative shame is characterized by the following: it is temporary, it “does not push the shamed toward even worse patterns of behavior,” it does not isolate individuals, and it “allows individuals to hold themselves accountable through the actions of others.” Disintegrative shame is characterized by a permanence aspect (i.e. branding or maiming), this permanence leaves no room for redemption and likely deprives a community of a potential cooperator. By differentiating shame with these concepts in mind, we have a baseline for determining whether or not shame in certain situations can ultimately benefit one another, or permanently harm an individual and subsequently, their community.
+    </p>
+  </div>
+
+  <div class="examples">
+    <p class="text">Examples</p>
     
+    <div class="examples-carousel">
+      <div class="carousel-slide" id="socialmedia">Social Media Interactive</div>
+      <div class="carousel-slide" id="robots">Robots Interactive</div>
+      <div class="carousel-slide" id="data">Data Interactive</div>
+      <div class="carousel-slide" id="hubris">Hubris Interactive</div>
+      <div class="carousel-slide" id="materials">Materials</div>
+    </div>
+    
+    <div class="carousel-buttons">
+      <button class="carousel-btn" data-slide="0">Social Media</button>
+      <button class="carousel-btn" data-slide="1">Robots</button>
+      <button class="carousel-btn" data-slide="2">Data</button>
+      <button class="carousel-btn" data-slide="3">Hubris</button>
+      <button class="carousel-btn" data-slide="4">Materials</button>
+    </div>
   </div>
 
   <nav class="bottom-nav">
-    <a> TOOLS OF AGENCY </a>
+    <a class="clickable"> TOOLS OF AGENCY </a>
   </nav>
+
+
+  <script>
+        
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const buttons = document.querySelectorAll('.carousel-btn');
+    const examplesSection = document.querySelector('.examples');
+
+    // Function to show the selected slide
+    function showSlide(slideIndex) {
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === slideIndex) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    // Add click event listener to each gallery image
+    galleryImages.forEach((image) => {
+      image.addEventListener('click', () => {
+        const slideIndex = parseInt(image.getAttribute('data-slide'));
+        examplesSection.scrollIntoView({ behavior: 'smooth' });
+        showSlide(slideIndex);
+      });
+    });
+
+    // Add click event listeners to all buttons for manual navigation
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const slideIndex = parseInt(button.getAttribute('data-slide'));
+        showSlide(slideIndex);
+      });
+    });
+
+    showSlide(0);
+
+
+  </script>
   
 </body>
 </html>
